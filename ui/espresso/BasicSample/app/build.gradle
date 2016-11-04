@@ -17,16 +17,35 @@ android {
     }
     productFlavors {
     }
+
+    packagingOptions {
+        exclude 'LICENSE.txt'
+        exclude 'META-INF/DEPENDENCIES.txt'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/dependencies.txt'
+        exclude 'META-INF/LGPL2.1'
+        exclude 'META-INF/sun-jaxb.episode'
+    }
 }
 
 dependencies {
     // App dependencies
     compile 'com.android.support:support-annotations:' + rootProject.supportLibVersion;
     compile 'com.google.guava:guava:18.0'
+
     // Testing-only dependencies
     // Force usage of support annotations in the test app, since it is internally used by the runner module.
     androidTestCompile 'com.android.support:support-annotations:' + rootProject.supportLibVersion;
     androidTestCompile 'com.android.support.test:runner:' + rootProject.runnerVersion;
     androidTestCompile 'com.android.support.test:rules:' + rootProject.rulesVersion;
     androidTestCompile 'com.android.support.test.espresso:espresso-core:' + rootProject.espressoVersion;
+
+    // Allure
+    androidTestCompile 'ru.yandex.qatools.allure:allure-junit-adaptor:1.4.24.RC3'
 }
