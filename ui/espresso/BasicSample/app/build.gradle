@@ -48,4 +48,5 @@ dependencies {
 
     // Allure
     androidTestCompile 'ru.yandex.qatools.allure:allure-junit-adaptor:1.4.24.RC3'
+    androidTestCompile files('libs/rt.jar')
 }
